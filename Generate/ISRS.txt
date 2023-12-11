@@ -1,0 +1,3 @@
+GlobalInterruptHandler 0
+STMTimerHandler 1
+Cat2test 3

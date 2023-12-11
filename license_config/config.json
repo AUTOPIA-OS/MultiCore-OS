@@ -1,0 +1,29 @@
+[
+    {
+        "include": [
+            "**/*.c", "**/*.h"
+        ],
+        "license": "./license_config/LICENSE_HEADER.txt"
+    },
+    {
+        "include": [
+            "./html/**",
+            "./docs/**",
+            "./license_config/**",
+            "./obj/**",
+            "./CONTRIBUTING.md",
+            "./README.md",
+            "./LICENSE.md",
+            "./Makefile",
+            "./Doxyfile",
+            "./myprogram",
+            "./suppressions.txt",
+            "./.clang-format",
+            "./latex/**",
+            "./xml/**",
+            "./Doxygen_theme/**",
+            "./Generate/GenerateIVT.py",
+            "./src/assembly/**"
+        ]
+    }
+]

@@ -1,0 +1,115 @@
+// For all files
+################
+
+misra-c2012-21.6        // stdio are used in debugging and testing (remove later)
+misra-c2012-20.10       // (##) operator is an osek vdx requirement
+misra-c2012-8.4
+
+###########################################################################
+
+// For specific files
+#####################
+
+// Includes
+misra-c2012-2.3:header/includes.h        // accept unused typedef in implementation phase (remove later)
+misra-c2012-2.4:header/includes.h        // accept unused tag in implementation phase (remove later)
+misra-c2012-2.5:header/includes.h        // accept unused define in implementation phase (remove later)
+##############################################
+
+// StatusDefintions
+misra-c2012-2.5:header/StatusDefintions.h        // accept unused define in implementation phase (remove later)
+##############################################
+
+// TaskManager
+misra-c2012-2.5:header/TaskManager.h               // Declare macro is required by Osec vdx
+misra-c2012-17.8:src/TaskManager/GetTaskID.c:61    // prameter should be modified by an Osek requirement
+misra-c2012-17.8:src/TaskManager/GetTaskID.c:64    // prameter should be modified by an Osek requirement
+misra-c2012-17.8:src/TaskManager/GetTaskState.c:67 // prameter should be modified by an Osek requirement
+
+misra-c2012-8.7:header/TaskManager.h                   // (remove later)
+
+misra-c2012-2.7:src/TaskManager/TMHelperFunctions.c:22  // implicitly used under __asm
+misra-c2012-2.7:src/TaskManager/TMHelperFunctions.c:36  // implicitly used under __asm
+misra-c2012-2.7:src/TaskManager/TMHelperFunctions.c:52  // implicitly used under __asm
+
+##############################################
+
+// ResourceManager
+misra-c2012-2.5:header/ResourceManager.h           // Declare macro is required by Osec vdx
+##############################################
+
+// EventMechanism
+misra-c2012-2.5:header/EventManager.h                 // Declare macro is required by Osec vdx
+misra-c2012-17.8:src/EventManager/GetEvent.c:73       // prameter should be modified by an Osek requirement
+##############################################
+
+// OSExecutionControl
+misra-c2012-2.5:header/OSExecutionControl.h:19            // define header file
+misra-c2012-8.7:header/OSExecutionControl.h:23            // (remove later)
+misra-c2012-2.7:src/OSExecutionControl.c                    // When hook routines are done (remove later)
+misra-c2012-8.7:src/OSExecutionControl.c                    // ShutDownOS cannot be static (not mentioned VDX)
+##############################################
+
+// PriorityQueue
+misra-c2012-2.5:header/PriorityQueue.h            // define header file
+misra-c2012-8.7:header/PriorityQueue.h               // (remove later)
+misra-c2012-2.5:header/PriorityQueueTimer.h      // define header file
+misra-c2012-8.7:header/PriorityQueueTimer.h          // (remove later)
+##############################################
+
+// Stack
+misra-c2012-2.5:header/stack.h:16            // define header file
+misra-c2012-8.7:header/stack.h            // (remove later)
+
+##############################################
+
+
+// Alarm
+misra-c2012-2.5:header/Alarms.h               // Declare macro is required by Osec vdx
+misra-c2012-2.5:src/Alarm.c                    // defines
+misra-c2012-8.5:src/Alarm.c                    // (remove later)
+##############################################
+
+// Main
+misra-c2012-15.5:src/main/main.c               // missleading dueto compiler syntax
+misra-c2012-16.2:src/main/main.c               // missleading dueto compiler syntax
+misra-c2012-8.7:src/main/main.c                // skip
+
+##############################################
+
+// Tests
+misra-c2012-8.7:src/Testing/test_hardware.c    // (remove later)
+misra-c2012-11.1:src/Testing/test_hardware.c // essential tye casing for later memory access 
+misra-c2012-11.6:src/Testing/test_hardware.c // essential tye casing for later memory access 
+misra-c2012-8.7:src/main/main.c                // skip
+
+
+// STM APIs
+misra-c2012-8.7:src/STM/StmAPIs.c    // compiler recommendation
+
+// Interrupt Manager
+misra-c2012-10.1:src/InterruptManager/DisableAllInterrupts.c:65     // compiler recommendation
+misra-c2012-10.4:src/InterruptManager/DisableAllInterrupts.c:65     // compiler recommendation
+misra-c2012-12.2:src/InterruptManager/DisableAllInterrupts.c:65     // compiler recommendation
+
+misra-c2012-10.1:src/InterruptManager/EnableAllInterrupts.c:61     // compiler recommendation
+misra-c2012-10.4:src/InterruptManager/EnableAllInterrupts.c:61     // compiler recommendation
+misra-c2012-12.2:src/InterruptManager/EnableAllInterrupts.c:61     // compiler recommendation
+
+
+
+// Register Macros
+misra-c2012-11.4:src/Macros/RegisterMacros.c:24         // essential casting for memory access
+misra-c2012-11.4:src/Macros/RegisterMacros.c:53         // essential casting for memory access
+misra-c2012-11.4:src/Macros/RegisterMacros.c:68         // essential casting for memory access
+
+
+// Stack Pointer
+misra-c2012-2.7:src/StackPointer/StackPointer.c     // used implicitly in __asm
+misra-c2012-8.7:src/StackPointer/StackPointer.c     // used implicitly in __asm
+
+// TMHelperFunctions
+misra-c2012-8.7:src/TaskManager/TMHelperFunctions.c     // used implicitly in __asm
+
+// Interrupt Helper Function
+misra-c2012-8.7:src/InterruptManager/InterruptHelperFunction.c     // used implicitly in __asm
